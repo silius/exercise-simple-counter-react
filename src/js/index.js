@@ -12,4 +12,6 @@ import "../styles/index.scss";
 import { Home } from "./component/home.js";
 
 //render your react application
-ReactDOM.render(<Home />, document.querySelector("#app"));
+let times = ["7", "0", "0", "0", "0"];
+
+ReactDOM.render(<Home dig={times} />, document.querySelector("#app"));

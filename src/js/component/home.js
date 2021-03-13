@@ -1,11 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 //create your first component
-export function Home() {
-	let zero = "'0'";
-	const segundos = {
-		"--timer-seconds": zero
-	};
+export function Home(props) {
 	return (
 		<div className="clock-container">
 			<div className="clock-col">
@@ -14,21 +11,29 @@ export function Home() {
 				</p>
 			</div>
 			<div className="clock-col">
-				<p className="clock-seconds clock-timer" style={segundos}></p>
-			</div>
-			<div className="clock-col">
-				<p className="clock-seconds clock-timer" style={segundos}></p>
-			</div>
-			<div className="clock-col">
-				<p className="clock-seconds clock-timer" style={segundos}></p>
-			</div>
-			<div className="clock-col">
-				<p className="clock-seconds clock-timer" style={segundos}></p>
+				<p
+					className="clock-seconds clock-timer"
+					style={printDigits(props.dig[4])}></p>
 			</div>
 			<div className="clock-col">
 				<p
 					className="clock-seconds clock-timer"
-					style={printDigits(12)}></p>
+					style={printDigits(props.dig[3])}></p>
+			</div>
+			<div className="clock-col">
+				<p
+					className="clock-seconds clock-timer"
+					style={printDigits(props.dig[2])}></p>
+			</div>
+			<div className="clock-col">
+				<p
+					className="clock-seconds clock-timer"
+					style={printDigits(props.dig[1])}></p>
+			</div>
+			<div className="clock-col">
+				<p
+					className="clock-seconds clock-timer"
+					style={printDigits(props.dig[0])}></p>
 			</div>
 		</div>
 	);
@@ -37,4 +42,8 @@ export function Home() {
 const printDigits = digits => {
 	const secs = { "--timer-seconds": `'${digits}'` };
 	return secs;
+};
+
+Home.propTypes = {
+	dig: PropTypes.array
 };
