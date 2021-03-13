@@ -13,27 +13,27 @@ export function Home(props) {
 			<div className="clock-col">
 				<p
 					className="clock-seconds clock-timer"
-					style={printDigits(props.dig[4])}></p>
+					style={printDigits(props.dig[4] % 10)}></p>
 			</div>
 			<div className="clock-col">
 				<p
 					className="clock-seconds clock-timer"
-					style={printDigits(props.dig[3])}></p>
+					style={printDigits(props.dig[3] % 10)}></p>
 			</div>
 			<div className="clock-col">
 				<p
 					className="clock-seconds clock-timer"
-					style={printDigits(props.dig[2])}></p>
+					style={printDigits(props.dig[2] % 10)}></p>
 			</div>
 			<div className="clock-col">
 				<p
 					className="clock-seconds clock-timer"
-					style={printDigits(props.dig[1])}></p>
+					style={printDigits(props.dig[1] % 10)}></p>
 			</div>
 			<div className="clock-col">
 				<p
 					className="clock-seconds clock-timer"
-					style={printDigits(props.dig[0])}></p>
+					style={printDigits(props.dig[0] % 10)}></p>
 			</div>
 		</div>
 	);
