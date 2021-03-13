@@ -26,8 +26,15 @@ export function Home() {
 				<p className="clock-seconds clock-timer" style={segundos}></p>
 			</div>
 			<div className="clock-col">
-				<p className="clock-seconds clock-timer" style={segundos}></p>
+				<p
+					className="clock-seconds clock-timer"
+					style={printDigits(12)}></p>
 			</div>
 		</div>
 	);
 }
+
+const printDigits = digits => {
+	const secs = { "--timer-seconds": `'${digits}'` };
+	return secs;
+};
